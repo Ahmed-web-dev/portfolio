@@ -1,0 +1,450 @@
+/* تنسيقات عامة للجسم والخطوط والألوان */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e; /* لون خلفية داكن */
+    color: #e0e0e0; /* لون النص الأساسي (رمادي فاتح) */
+    line-height: 1.6; /* تباعد الأسطر لتحسين القراءة */
+    direction: ltr; /* اتجاه النص من اليسار لليمين */
+    text-align: left; /* محاذاة النص لليسار افتراضياً */
+}
+
+/* تنسيق لون تحديد النص (Selection Color) */
+/* ده بيغير لون الخلفية والنص لما بتحدد أي كلام بالماوس */
+::selection {
+    background-color: #892cdc; /* لون خلفية التحديد (نفس لون الروابط المميزة) */
+    color: #0f0f1d; /* لون النص المحدد (لون داكن ليظهر بوضوح) */
+}
+
+/* للمتصفحات القديمة (Firefox) */
+::-moz-selection {
+    background-color: #892cdc;
+    color: #0f0f1d;
+}
+
+/* تنسيق الروابط العامة */
+a {
+    color: #892cdc; /* لون الروابط (بنفسجي) */
+    text-decoration: none; /* إزالة الخط تحت الروابط */
+}
+
+a:hover {
+    color: #c780e8; /* لون الروابط عند مرور الماوس (بنفسجي أفتح) */
+    text-decoration: underline; /* إضافة خط تحت الروابط عند مرور الماوس */
+}
+
+/* تنسيق شريط التنقل (Header) */
+header {
+    background-color: #0f0f1d; /* لون خلفية الهيدر (داكن جداً) */
+    color: #fff; /* لون النص في الهيدر (أبيض) */
+    padding: 1rem 0; /* مسافة داخلية علوية وسفلية */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* ظل بسيط للهيدر */
+}
+
+.header-container {
+    display: flex; /* لترتيب العناصر (اللوجو وشريط التنقل) أفقياً */
+    justify-content: space-between; /* توزيع العناصر على الأطراف */
+    align-items: center; /* محاذاة العناصر رأسياً في المنتصف */
+    max-width: 1200px; /* أقصى عرض للهيدر */
+    margin: 0 auto; /* توسيط الهيدر في الصفحة */
+    padding: 0 20px; /* مسافة داخلية من اليمين واليسار */
+}
+
+/* تنسيق اللوجو */
+.logo a {
+    color: #fff; /* لون نص اللوجو (أبيض) */
+    font-size: 1.8rem; /* حجم خط اللوجو */
+    font-weight: bold; /* خط سميك */
+    text-decoration: none; /* إزالة الخط تحت اللوجو */
+    letter-spacing: 1px; /* تباعد الحروف */
+    transition: color 0.3s ease; /* انتقال سلس لتغيير اللون */
+}
+
+.logo a:hover {
+    color: #c780e8; /* لون اللوجو عند مرور الماوس */
+}
+
+nav ul {
+    list-style: none; /* إزالة نقاط القائمة */
+    padding: 0;
+    margin: 0;
+    display: flex; /* لترتيب عناصر القائمة أفقياً */
+    gap: 20px; /* مسافة بين عناصر القائمة */
+}
+
+nav ul li a {
+    color: #fff; /* لون نص عناصر القائمة (أبيض) */
+    padding: 0.5rem 1rem; /* مسافة داخلية */
+    display: block; /* لجعل الروابط كبلوكات قابلة للضغط */
+    border-radius: 5px; /* حواف مستديرة */
+    transition: background-color 0.3s ease; /* انتقال سلس لتغيير الخلفية */
+}
+
+nav ul li a:hover {
+    background-color: #892cdc; /* لون خلفية عناصر القائمة عند مرور الماوس */
+    text-decoration: none; /* إزالة الخط تحت النص */
+}
+
+/* تنسيق زر الـ CTA (Call To Action) - الأزرار الرئيسية */
+/* تم تعديل هذا الجزء لجعل الزرين بنفس التنسيق */
+.button {
+    background-color: transparent; /* الخلفية شفافة */
+    border: 2px solid #892cdc; /* حدود بنفس اللون البنفسجي */
+    color: #892cdc; /* لون النص الأساسي بنفس لون الحدود */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* انتقال سلس للخلفية ولون النص */
+    white-space: nowrap; /* يمنع النص من الانقسام لسطرين */
+    display: inline-block; /* لضمان ظهور الزرين بجانب بعضهما */
+    margin: 10px; /* مسافة بسيطة بين الزرين */
+}
+
+.button:hover {
+    background-color: #892cdc; /* عند مرور الماوس، الخلفية تبقى بنفسجي */
+    color: #fff; /* والنص يبقى أبيض */
+}
+
+/* الزر الثانوي (لو عايز تميزه بلون مختلف أو تنسيق مختلف، لكن حالياً هو نفس الزر الرئيسي) */
+.button-secondary {
+    background-color: transparent;
+    border: 2px solid #892cdc;
+    color: #892cdc;
+}
+
+.button-secondary:hover {
+    background-color: #892cdc;
+    color: #fff;
+}
+
+/* تنسيق الأقسام الرئيسية (Sections) */
+section {
+    padding: 60px 20px; /* مسافة داخلية لكل قسم */
+    margin: 20px auto; /* مسافة خارجية وتوسيط القسم */
+    max-width: 900px; /* أقصى عرض للقسم */
+    background-color: #2e2e4a; /* لون خلفية القسم */
+    border-radius: 10px; /* حواف مستديرة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* ظل بسيط للقسم */
+    text-align: center; /* توسيط المحتوى داخل معظم الأقسام افتراضياً */
+}
+
+/* تغيير لون خلفية الأقسام الزوجية (الثاني والرابع وهكذا) */
+section:nth-of-type(even) {
+    background-color: #3a3a5e;
+}
+
+h1, h2 {
+    color: #c780e8; /* لون عناوين الأقسام */
+    text-align: center; /* توسيط العناوين */
+    margin-bottom: 30px; /* مسافة سفلية */
+}
+
+/* تنسيقات خاصة بقسم الرئيسية (Home Section) */
+#home .home-content {
+    display: flex; /* استخدام فليكس بوكس لترتيب المحتوى */
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    align-items: center; /* توسيط العناصر أفقياً */
+    text-align: center; /* محاذاة النص للمنتصف */
+}
+
+.home-illustration {
+    max-width: 250px; /* حجم الصورة التوضيحية */
+    height: auto;
+    border-radius: 50%; /* لجعل الصورة دائرية */
+    margin-bottom: 30px; /* مسافة أسفل الصورة */
+    box-shadow: 0 0 15px rgba(137, 44, 220, 0.5); /* ظل أنيق للصورة */
+}
+
+#home h1 {
+    font-size: 3rem; /* حجم أكبر للعنوان الرئيسي */
+    margin-bottom: 20px;
+    color: #c780e8;
+}
+
+#home p {
+    font-size: 1.15rem; /* حجم خط أكبر للفقرات */
+    max-width: 700px; /* أقصى عرض للفقرات */
+    margin: 0 auto 25px auto; /* توسيط الفقرات ومسافة سفلية */
+}
+
+.home-cta-buttons {
+    margin-top: 20px; /* مسافة أعلى الأزرار */
+}
+
+/* تنسيقات خاصة بقسم عني (About Me Section) */
+#about .about-content {
+    text-align: left; /* محاذاة النص لليسار داخل قسم عني */
+    line-height: 1.8; /* زيادة تباعد الأسطر */
+}
+
+.highlight-initial {
+    color: #c780e8; /* نفس لون العناوين المميز في الصفحة */
+    font-weight: bold; /* خط سميك */
+    font-size: 1.3em; /* حجم أكبر للحرف (1.5 ضعف حجم الخط الأساسي) */
+    /* ممكن تضيف تكست شادو لو عايز تأثير جمالي أكتر */
+    /* text-shadow: 0 0 5px rgba(199, 128, 232, 0.5); */
+}
+
+#about h3 {
+    color: #c780e8;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-align: center; /* توسيط عنوان المهارات */
+    font-size: 1.8rem;
+}
+
+.skills-list-container {
+    display: flex; /* لترتيب فئات المهارات بجانب بعضها البعض */
+    flex-wrap: wrap; /* للسماح للفئات بالنزول لسطر جديد على الشاشات الصغيرة */
+    justify-content: center; /* توسيط فئات المهارات */
+    gap: 30px; /* مسافة بين فئات المهارات */
+    margin-bottom: 30px;
+}
+
+.skill-category {
+    background-color: #3a3a5e; /* لون خلفية لفئة المهارة */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    flex: 1; /* للسماح للعناصر بأخذ مساحة متساوية */
+    min-width: 250px; /* حد أدنى للعرض لكل فئة */
+    max-width: 350px; /* حد أقصى للعرض لكل فئة */
+    text-align: left; /* محاذاة النص داخل كل فئة مهارة */
+}
+
+.skill-category h4 {
+    color: #e0e0e0;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.skill-category ul {
+    list-style: none; /* إزالة النقاط الافتراضية للقائمة */
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category ul li {
+    background-color: #2e2e4a; /* لون خلفية لكل مهارة */
+    margin-bottom: 8px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1.05rem;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+.skill-category ul li:hover {
+    background-color: #892cdc; /* تغيير اللون عند مرور الماوس */
+    color: #fff;
+}
+
+/* تنسيق قسم المشاريع (Projects Section) */
+.project-item {
+    background-color: #3a3a5e;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    display: flex; /* عشان نرتب الصورة والنص جنب بعض */
+    flex-direction: column; /* افتراضياً، الصورة والنص هيبقوا فوق بعض */
+    align-items: center; /* توسيط العناصر لو كانوا عموديين */
+}
+
+/* تنسيق صور المشاريع */
+.project-item .project-screenshot {
+    max-width: 100%; /* عشان الصورة متزدش عن عرض العنصر الأب */
+    height: auto; /* عشان تحافظ على أبعاد الصورة */
+    border-radius: 5px; /* حواف مستديرة للصورة */
+    margin-bottom: 20px; /* مسافة تحت الصورة */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* ظل خفيف للصورة */
+}
+
+.project-item h3 {
+    color: #e0e0e0;
+    margin-top: 0;
+    margin-bottom: 15px; /* مسافة تحت العنوان */
+    text-align: center; /* توسيط العنوان */
+}
+
+.project-item p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* تنسيقات للتصميم المتجاوب (Responsive Design) */
+@media (min-width: 768px) {
+    .project-item {
+        flex-direction: row; /* على الشاشات الكبيرة: الصورة والنص جنب بعض */
+        text-align: left; /* محاذاة النص لليسار */
+        gap: 30px; /* مسافة بين الصورة والنص */
+        align-items: flex-start; /* الصورة والنص يبدأوا من الأعلى */
+    }
+
+    .project-item .project-screenshot {
+        max-width: 300px; /* أقصى عرض للصورة على الشاشات الكبيرة */
+        margin-bottom: 0; /* إلغاء المسافة السفلية */
+        flex-shrink: 0; /* منع الصورة من الانكماش */
+    }
+
+    .project-item .content-wrapper { /* ممكن تحتاج تعمل div يلف النص لو هتطبق flexbox على طول الـ project-item */
+        flex-grow: 1; /* السماح للنص بأخذ المساحة المتبقية */
+    }
+
+    .project-item h3 {
+        text-align: left; /* رجع العنوان لليسار */
+    }
+}
+
+
+/* تنسيقات خاصة بقسم تواصل معي (Contact Me Section) */
+#contact .contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+#contact p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* تنسيق الأزرار داخل قسم التواصل */
+.contact-buttons {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* للسماح للأزرار بالنزول لسطر جديد على الشاشات الصغيرة */
+}
+
+/* تنسيق زر البريد الإلكتروني */
+.email-button {
+    background-color: #D44638; /* لون أحمر/برتقالي زي أيقونة جوجل ميل أو outlook */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    border: 2px solid #D44638;
+}
+
+.email-button:hover {
+    background-color: #A03126; /* لون أغمق عند المرور */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* تنسيق زر الواتساب */
+.whatsapp-button {
+    background-color: #25D366; /* لون واتساب الأخضر */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    border: 2px solid #25D366;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* تنسيق زر الفيسبوك */
+.facebook-button {
+    background-color: #3b5998; /* لون فيسبوك الأزرق */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    border: 2px solid #3b5998;
+}
+
+.facebook-button:hover {
+    background-color: #2d4373; /* لون أغمق عند المرور */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* تنسيق زر تويتر */
+.twitter-button {
+    background-color: #1da1f2; /* لون تويتر الأزرق */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    border: 2px solid #1da1f2;
+}
+
+.twitter-button:hover {
+    background-color: #0c85d0; /* لون أغمق عند المرور */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* تنسيق زر لينكدإن الجديد */
+.linkedin-button {
+    background-color: #0077B5; /* لون لينكدإن الأزرق */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    border: 2px solid #0077B5;
+}
+
+.linkedin-button:hover {
+    background-color: #005f8f; /* لون أغمق عند المرور */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-note {
+    font-style: italic;
+    color: #b0b0b0;
+    margin-top: 40px;
+}
+
+
+/* تنسيق تذييل الصفحة (Footer) */
+footer {
+    background-color: #0f0f1d;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 40px;
+}
+
+.social-links a {
+    color: #fff; /* لون الروابط النصية في الفوتر */
+    margin: 0 10px; /* مسافة بين الروابط */
+    font-size: 1.1rem; /* حجم الخط */
+    /* التنسيقات دي كافية لشكل الروابط النصية القديم */
+}
+
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.1rem;
+}
