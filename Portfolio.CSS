@@ -168,7 +168,7 @@ nav ul li a:hover {
 section {
     padding: 60px 20px;
     /* مسافة داخلية لكل قسم */
-    margin: 20px 1.5%;
+    margin: 20px 1%;
     /* مسافة خارجية وتوسيط القسم */
     max-width: auto;
     /* أقصى عرض للقسم */
